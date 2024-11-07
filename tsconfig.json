@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ESNext",
     "module": "ESNext",
     "declaration": true,           // Generate .d.ts files
     "outDir": "./dist",
@@ -13,7 +13,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "tests/transform.test.ts"  ],
   "exclude": [
     "node_modules",
     "dist"
