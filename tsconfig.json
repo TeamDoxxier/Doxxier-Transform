@@ -1,21 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES5",
     "module": "ESNext",
-    "declaration": true,           // Generate .d.ts files
-    "outDir": "./dist",
+    "declaration": true,
+    "outDir": "dist",
+    "declarationDir": "dist/types",
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": [
-    "src/**/*.ts"
-, "tests/transform.test.ts"  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "tests"]
 }

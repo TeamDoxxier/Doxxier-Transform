@@ -30,7 +30,7 @@ describe('Transformer', () => {
         expect.assertions(1);
         try {
             await transformer.Transform(filename, file);
-        }catch(e) {
+        }catch(e: any) {
             expect(e.message).toBe("ImageMagick not initialized");
         }
     });

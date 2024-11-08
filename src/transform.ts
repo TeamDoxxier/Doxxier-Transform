@@ -15,14 +15,13 @@ export class Transformer {
         this.isInitialised = false;
     }
 
-    public async Init(wasmLocationOrByteArray?: URL | ByteArray) {
-        if (wasmLocationOrByteArray instanceof URL) {
+    public async Init(wasmLocationOrByteArray?: string | ByteArray) {
+        if (typeof wasmLocationOrByteArray === 'string') {
             await initializeImageMagick(wasmLocationOrByteArray);
         } else if (wasmLocationOrByteArray instanceof Uint8Array) {
             await initializeImageMagick(wasmLocationOrByteArray);
         } else {
-            const wasmLocation = new URL('@imagemagick/magick-wasm/magick.wasm', import.meta.url);
-            await initializeImageMagick(wasmLocation);
+            throw new Error('Wasm location must be provided explicitly in the browser');
         }
         this.isInitialised = true;
     }
